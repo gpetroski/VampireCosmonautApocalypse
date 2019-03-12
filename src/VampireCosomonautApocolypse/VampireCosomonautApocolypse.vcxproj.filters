@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="bullet.bmp" />
+    <None Include="enemy.bmp" />
+    <None Include="mainScreen.bmp" />
+    <None Include="ship.bmp" />
+    <None Include="stars.bmp" />
+    <None Include="titleScreen.bmp" />
+    <None Include="vca.asm" />
+    <None Include="vca.inc" />
+  </ItemGroup>
+</Project>
