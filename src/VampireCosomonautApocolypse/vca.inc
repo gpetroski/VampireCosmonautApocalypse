@@ -9,7 +9,7 @@ GRAPHICS_MODE		= 13h	;graphics mode 320x200 256colors
 speaker  =  61h	; address of speaker port
 timer    =  42h	; address of timer port
 noteDelay   = 32 ; based on 4000 cycle cpu in dosbox
-redrawDelay = 20 ;
+redrawDelay = 20d ;
 
 OpenFile PROTO, fileName:PTR BYTE;
 ReadBMPHeader PROTO, fileHandle:WORD;

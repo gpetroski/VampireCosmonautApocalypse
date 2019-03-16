@@ -12,7 +12,7 @@ INCLUDE vca.inc
 	background SPRITE <>	;// Background stars sprite
 	bullets SPRITE 8 dup(<>)	;// Bullet sprites
 	numBullets BYTE 8
-	numEnemies BYTE 1
+	numEnemies BYTE 5
 	QuitVar BYTE 0h		;//check var for quitting
 	vmode BYTE ?
 	titleScreen BYTE "TITLE.BMP",0
@@ -47,7 +47,9 @@ INCLUDE vca.inc
 	speakerStatus WORD ?
 	songBuffer BYTE 3 dup(0)
 	randNum WORD ?
-	
+	ticks WORD 0
+	respawnDelay WORD 30
+
 .code
 main PROC
 	mov	ax,@data
@@ -184,16 +186,16 @@ L1:
 	;//////////////////////////////////////////////////
 	sub background.X, 4
 	cmp background.X, 4
-	jle resetX
-reset:
-	jmp DrawLoop
-	
-resetX:
+	jg reset
 	;////////////////////////////////////////////////////
 	;// Reset the position of the stars to the beginning
 	;////////////////////////////////////////////////////
 	mov background.X, 320
-	jmp reset
+reset:
+	mov ax, ticks
+	inc ax
+	mov ticks, ax
+	jmp DrawLoop
 
 quit:
 	mov   ah,0			; wait for key
@@ -414,6 +416,10 @@ FireBullet ENDP
 ;// Input:
 ;////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 SpawnShip PROC
+	;movzx eax, ticks
+	;div respawnDelay
+	;cmp eax, 0
+	;jne done
 	mov bx, 0
 	movzx cx, numEnemies
 LEnemies:
@@ -946,8 +952,9 @@ expLoop:
 	push cx
 
    ; Create a delay loop between pitches:
-	mov  cx, 50
-L1a:	push cx	; outer loop
+	mov  cx, 1
+L1a:	
+	push cx	; outer loop
 	mov  cx, 00A00h
 L1b:	; inner loop
 	loop L1b
