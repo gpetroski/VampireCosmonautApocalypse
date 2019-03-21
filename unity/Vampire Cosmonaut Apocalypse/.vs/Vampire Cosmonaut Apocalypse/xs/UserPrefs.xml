@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{DC6E88B8-0D3A-79E8-6057-9124F5403FE4}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EndController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GameController.cs" Line="30" Column="10" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="40" Column="10" />
+      <File FileName="Assets/Scripts/TitleController.cs" Line="19" Column="36" />
+      <File FileName="Assets/Scripts/EndController.cs" Line="20" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Vampire_220Cosmonaut_220Apocalypse PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
