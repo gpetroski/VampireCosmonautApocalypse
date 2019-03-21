@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 10.00.30319.01	    03/16/19 11:53:27
+Microsoft (R) Macro Assembler Version 10.00.30319.01	    03/18/19 15:43:09
 3Vampire Cosmonaut Apocolypse              (vca.asm	     Page 1 - 1
 
 
@@ -82,7 +82,7 @@ Microsoft (R) Macro Assembler Version 10.00.30319.01	    03/16/19 11:53:27
         0000
        ]
  011C 08				numBullets BYTE 8
- 011D 05				numEnemies BYTE 5
+ 011D 03				numEnemies BYTE 3
  011E 00				QuitVar BYTE 0h		;//check var for quitting
  011F 00				vmode BYTE ?
  0120 54 49 54 4C 45 2E			titleScreen BYTE "TITLE.BMP",0
@@ -1075,13 +1075,13 @@ Microsoft (R) Macro Assembler Version 10.00.30319.01	    03/16/19 11:53:27
 					;// Lots of convoluted logic to make an shooting sound
 					;///////////////////////////////////////////////////////////
  05E7				shoot:
- 05E7  B0 09				mov al, 9
+ 05E7  B0 01				mov al, 1
  05E9				L2:
  05E9  E6 42				out  timer,al       	; timer port: pulses speaker
  05EB  E6 42				out timer, al
 				
 				   ; Create a delay loop between pitches:
- 05ED  B9 001E				mov  cx, 30
+ 05ED  B9 0001				mov  cx, 1
  05F0				L3:	
  05F0  51				push cx	; outer loop
  05F1  B9 A000				mov  cx, 0A000h
@@ -1197,7 +1197,7 @@ Microsoft (R) Macro Assembler Version 10.00.30319.01	    03/16/19 11:53:27
  0761				PlayNote ENDP
 				
 				END main
-Microsoft (R) Macro Assembler Version 10.00.30319.01	    03/16/19 11:53:27
+Microsoft (R) Macro Assembler Version 10.00.30319.01	    03/18/19 15:43:09
 3Vampire Cosmonaut Apocolypse              (vca.asm	     Symbols 2 - 1
 
 

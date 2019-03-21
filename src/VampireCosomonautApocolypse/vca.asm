@@ -12,7 +12,7 @@ INCLUDE vca.inc
 	background SPRITE <>	;// Background stars sprite
 	bullets SPRITE 8 dup(<>)	;// Bullet sprites
 	numBullets BYTE 8
-	numEnemies BYTE 5
+	numEnemies BYTE 3
 	QuitVar BYTE 0h		;//check var for quitting
 	vmode BYTE ?
 	titleScreen BYTE "TITLE.BMP",0
@@ -979,13 +979,13 @@ L1c:
 	;// Lots of convoluted logic to make an shooting sound
 	;///////////////////////////////////////////////////////////
 shoot:
-	mov al, 9
+	mov al, 1
 L2:
 	out  timer,al       	; timer port: pulses speaker
 	out timer, al
 
    ; Create a delay loop between pitches:
-	mov  cx, 30
+	mov  cx, 1
 L3:	
 	push cx	; outer loop
 	mov  cx, 0A000h
